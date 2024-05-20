@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <style media="screen">
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+        overflow: hidden; /* Prevent scrolling while animating */
+      }
+      .background {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      form {
+        height: 540px;
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.13);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px;
+      }
+      form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      input {
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: white;
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      ::placeholder {
+        color: #e5e5e5;
+      }
+      .sign-up {
+        width: 100%;
+        background-color: #e50914;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <video autoplay loop muted>
+        <source src="Background-login/bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <form id="signupForm">
+      <h3>Sign Up</h3>
+      <label for="newUsername">New Username</label>
+      <input
+        type="text"
+        placeholder="Email or Phone"
+        id="newUsername"
+        required
+      />
+      <label for="newPassword">Password</label>
+      <input type="password" placeholder="Password" id="newPassword" required />
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        id="confirmPassword"
+        required
+      />
+      <button type="submit" class="sign-up">Confirm Sign-up?</button>
+      <div id="error" style="color: red"></div>
+    </form>
+
+    <script>
+      let submitBtn = document.querySelector(".sign-up");
+      let username = document.querySelector("#newUsername");
+      let password = document.querySelector("#newPassword");
+      let cpassword = document.querySelector("#confirmPassword");
+
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!username.value || !password.value) {
+          document.getElementById("error").innerText =
+            "Please Enter username and password !";
+          return;
+        }
+
+        if (password.value !== cpassword.value) {
+          document.getElementById("error").innerText =
+            "Passwords do not match !";
+          return;
+        }
+
+        fetch("http://localhost:3000/sign-up", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: username.value,
+            password: password.value,
+          }),
+        })
+          .then(() => {
+            window.location.href = "login.html";
+          })
+          .catch((error) => {
+            console.log(error); 
+            document.getElementById("error").innerText =
+              "Some Error Occurred !";
+          });
+      });
+    </script>
+  </body>
+</html>

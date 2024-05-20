@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <div class="background">
+        <video autoplay loop muted>
+            <source src="Background-login/bg.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <header class="header">
+        <div class="header-content">
+            <h1>Movie Mate</h1>
+            <nav>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+                <a href="#">Support</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="search-container">
+        <h2>Movie Info App</h2>
+        <input type="text" id="movie-name" placeholder="Enter movie name here..." value="Interstellar">
+        <button id="search-btn">Search</button>
+    </div>
+    
+    <div id="result" class="container"></div>
+    
+    <div class="button-container" id="book-button-container" style="display: none;" align="center">
+        <a href="index.html" class="book-button" id="book-button" >Book Now</a>
+    </div>
+    
+    <div class="container">
+        <h1>Now Showing Movies</h1>
+        <div class="movies-slider">
+            <button id="prevBtn" class="prev-btn">⬅️</button>
+            <div id="moviesList" class="movies-list">
+                <!-- Movies will be dynamically loaded here -->
+            </div>
+            <button id="nextBtn" class="next-btn">➡️</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 Movie Mate. All rights reserved.</p>
+            <p>Presidency University, Rajankunte, Yelahanka, Bangalore, Karnataka</p>
+        </div>
+    </footer>
+    
+    <script src="js/key.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
