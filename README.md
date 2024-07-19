@@ -32,7 +32,7 @@ This is a movie booking website project where users can search for movies, view 
    ```bash
    cd movie-booking-website
    ```
-3. Open `index.html` in your browser to start the website.
+3. Open `Login.html` in your browser to start the website.
 
 ## Screenshots
 
