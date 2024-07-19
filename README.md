@@ -40,11 +40,17 @@ This is a movie booking website project where users can search for movies, view 
 
 ## Screenshots
 
+### Login Page
+![Login Page](outputs\ss1.png)
+
 ### Home Page
-![Home Page](images/home-page.png)
+![Home Page](outputs\ss2.png)
 
 ### Movie Details Page
-![Movie Details](images/movie-details-page.png)
+![Movie Details](outputs\ss3.png)
 
 ### Ticket Booking Page
-![Ticket Booking](images/ticket-booking-page.png)
+![Ticket Booking](outputs\ss4.png)
+
+### Confirmation Page
+![Confirmation Page](outputs\ss5.png)
