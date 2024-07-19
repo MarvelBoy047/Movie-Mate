@@ -1,7 +1,3 @@
-Sure! Below is a sample `README.md` file for your movie booking website project. You can adjust the content as needed.
-
----
-
 # Movie Booking Website
 
 This is a movie booking website project where users can search for movies, view details, and book tickets. The project is built using HTML, CSS, and JavaScript, with the movie data fetched from the OMDB API.
