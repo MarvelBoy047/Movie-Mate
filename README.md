@@ -43,7 +43,7 @@ This is a movie booking website project where users can search for movies, view 
 ![Home Page](outputs\ss2.png)
 
 ### Movie Details Page
-![Movie Details]('outputs\ss3.png')
+![Movie Details](outputs\ss3.png)
 
 ### Ticket Booking Page
 ![Ticket Booking](outputs\ss4.png)
